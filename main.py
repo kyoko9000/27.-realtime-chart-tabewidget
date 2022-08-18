@@ -12,6 +12,7 @@ from show_data_form_mySQL import show_data
 
 timer = QTimer()
 
+
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -22,10 +23,11 @@ class MainWindow(QMainWindow):
 
         # khai bao button *****************************************
         self.uic.Button_load_data.clicked.connect(self.show_data_1)
-        # self.uic.Button_update.clicked.connect(self.save_data)
+        self.uic.Button_update.clicked.connect(self.save_data)
 
         self.uic.Button_start_chart.clicked.connect(self.show_diagram)
         self.uic.Button_stop_chart.clicked.connect(self.stop_update)
+
 
     def show_data_1(self):
         # clear error on the screen
@@ -92,6 +94,7 @@ class MainWindow(QMainWindow):
 
         except:
             print("no data")
+
 
 if __name__ == "__main__":
     # run app
