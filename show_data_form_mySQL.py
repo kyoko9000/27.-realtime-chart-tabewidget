@@ -1,8 +1,10 @@
 import mysql.connector
 from PyQt5.QtCore import QThread, pyqtSignal
 
+
 class show_data(QThread):
     signal = pyqtSignal(list)
+
     def __init__(self, index=0, database=0, table=0):
         super(show_data, self).__init__()
         self.a = index
