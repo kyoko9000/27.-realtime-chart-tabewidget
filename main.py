@@ -28,6 +28,7 @@ class MainWindow(QMainWindow):
         self.uic.Button_start_chart.clicked.connect(self.show_diagram)
         self.uic.Button_stop_chart.clicked.connect(self.stop_update)
 
+        self.uic.tableWidget.cellChanged.connect(self.save_data)
 
     def show_data_1(self):
         # clear error on the screen
@@ -61,10 +62,10 @@ class MainWindow(QMainWindow):
         print("close update")
         self.stop_update()
 
-    def keyPressEvent(self, event):
-        if event.key() == Qt.Key_Return:
-            print("enter press")
-            self.save_data()
+    # def keyPressEvent(self, event):
+    #     if event.key() == Qt.Key_Return:
+    #         print("enter press")
+    #         self.save_data()
 
     def stop_update(self):
         timer.stop()
